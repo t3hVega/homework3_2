@@ -50,7 +50,7 @@ class StudentServiceTest {
             new Student(1, "Гарри", 11);
             new Student(1, "Рон", 11);
         }};
-        when(studentRepository.findByAgeLike(11)).thenReturn(students);
+        when(studentRepository.findByAge(11)).thenReturn((ArrayList<Student>) students);
         List<Student> expected = students;
         List<Student> actual = studentService.findByAge(11);
         Assertions.assertEquals(expected, actual);

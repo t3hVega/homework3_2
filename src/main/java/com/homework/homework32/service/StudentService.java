@@ -5,6 +5,7 @@ import com.homework.homework32.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -34,6 +35,6 @@ public class StudentService {
     }
 
     public List<Student> findByAge(Integer age) {
-        return studentRepository.findByAgeLike(age);
+        return studentRepository.findByAge(age);
     }
 }

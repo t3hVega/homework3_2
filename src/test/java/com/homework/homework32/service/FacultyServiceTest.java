@@ -48,7 +48,7 @@ public class FacultyServiceTest {
             new Faculty(1, "Гриффиндор", "Красный");
             new Faculty(2, "Пуффендуй", "Красный");
         }};
-        when(facultyRepository.findByColorLike("Красный")).thenReturn(faculties);
+        when(facultyRepository.findByColorIgnoreCase("Красный")).thenReturn((ArrayList<Faculty>) faculties);
         List<Faculty> expected = faculties;
         List<Faculty> actual = facultyService.findByColor("Красный");
         Assertions.assertEquals(expected, actual);

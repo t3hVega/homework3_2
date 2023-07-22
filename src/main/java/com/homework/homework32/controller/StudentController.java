@@ -1,6 +1,7 @@
 package com.homework.homework32.controller;
 
 
+import com.homework.homework32.model.Faculty;
 import com.homework.homework32.model.Student;
 import com.homework.homework32.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -53,9 +53,9 @@ public class StudentController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping
+    @GetMapping("/by-age")
     public ResponseEntity<List<Student>> findStudents(@RequestParam(required = false) Integer age) {
-        if (age > 0) {
+        if (age != null) {
             return ResponseEntity.ok(studentService.findByAge(age));
         }
         return ResponseEntity.ok(Collections.emptyList());

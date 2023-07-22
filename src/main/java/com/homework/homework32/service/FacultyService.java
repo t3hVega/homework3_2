@@ -5,6 +5,7 @@ import com.homework.homework32.repository.FacultyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -35,6 +36,6 @@ public class FacultyService {
     }
 
     public List<Faculty> findByColor(String color) {
-        return facultyRepository.findByColorLike(color);
+        return facultyRepository.findByColor(color);
     }
 }
